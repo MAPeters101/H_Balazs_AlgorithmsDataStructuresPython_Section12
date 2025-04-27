@@ -84,8 +84,23 @@ class BinarySearchTree:
 
                 node.right_node.parent = parent
                 del node
+            # REMOVE NODE WITH 2 CHILDREN !!!
+            else:
+                print("Removing node with two children...%d" % node.data)
+                predecessor = self.get_predecessor(node.left_node)
 
+                # Swap the node and predecessor
+                temp = predecessor.data
+                predecessor.data = node.data
+                node.data = temp
 
+                self.remove_node(data, predecessor)
+
+    def get_predecessor(self, node):
+        if node.right_node:
+            return self.get_predecessor(node.right_node)
+
+        return node
 
     def insert_node(self, data, node):
         # Go to the left subtree
