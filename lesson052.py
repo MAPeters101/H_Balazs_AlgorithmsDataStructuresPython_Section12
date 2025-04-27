@@ -27,6 +27,20 @@ class BinarySearchTree:
         else:
             self.insert_node(data, self.root)
 
+    def remove_node(self, data, node):
+        # First we have to find the node we want to remove
+        if node is None:
+            return
+
+        if data < node.data:
+            self.remove_node(data, node.left_node)
+        elif data > node.data:
+            self.remove_node(data, node.right_node)
+        else:
+            # We found the node we want to remove
+            pass
+
+
     def insert_node(self, data, node):
         # Go to the left subtree
         if data < node.data:
