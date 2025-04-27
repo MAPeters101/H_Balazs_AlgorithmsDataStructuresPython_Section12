@@ -82,7 +82,7 @@ class BinarySearchTree:
                 else:
                     self.root = None
 
-                node.right_node.parent = parent
+                node.left_node.parent = parent
                 del node
             # REMOVE NODE WITH 2 CHILDREN !!!
             else:
@@ -162,7 +162,7 @@ if __name__ == '__main__':
     bst.insert(8)
     bst.insert(12)
     bst.insert(-5)
-    bst.remove(44)
+    bst.remove(8)
 
     bst.traverse()
 
