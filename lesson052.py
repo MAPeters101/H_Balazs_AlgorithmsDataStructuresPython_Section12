@@ -15,6 +15,10 @@ class BinarySearchTree:
         # We can access the root node exclusively
         self.root = None
 
+    def remove(self, data):
+        if self.root:
+            self.remove_node(data, self.root)
+
     def insert(self, data):
         # First node in the BST
         if self.root is None:
