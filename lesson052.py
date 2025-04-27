@@ -162,13 +162,7 @@ if __name__ == '__main__':
     bst.insert(8)
     bst.insert(12)
     bst.insert(-5)
-    bst.insert(44)
-    bst.insert(-12)
-    bst.insert(19)
-    bst.insert(22)
+    bst.remove(44)
 
     bst.traverse()
-    print()
-    print('Min value: %s' % bst.get_min())
-    print('Max value: %s' % bst.get_max())
 
