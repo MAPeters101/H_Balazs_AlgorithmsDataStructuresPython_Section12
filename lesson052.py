@@ -166,6 +166,8 @@ if __name__ == '__main__':
     bst.remove(10)
     bst.remove(5)
     bst.remove(8)
+    bst.remove(12)
+    bst.remove(-5)
 
     bst.traverse()
 
