@@ -38,7 +38,22 @@ class BinarySearchTree:
             self.remove_node(data, node.right_node)
         else:
             # We found the node we want to remove
-            pass
+            # There are 3 options
+            # LEAF NODE CASE
+            if node.left_node is None and node.right_node is None:
+                print("Removing a leaf node...%d" % node.data)
+                parent = node.parent
+
+                if parent is not None and parent.left_node == node:
+                    parent.left_node = None
+                if parent is not None and parent.right_node == node:
+                    parent.right_node = None
+
+                if parent is None:
+                    self.root = None
+
+                del node
+
 
 
     def insert_node(self, data, node):
