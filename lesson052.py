@@ -65,6 +65,21 @@ class BinarySearchTree:
                     parent.right_node = node.right_node
 
                 if parent is None:
+                    self.root = node.right_node
+
+                node.right_node.parent = parent
+                del node
+
+            elif node.right_node is None and node.leftt_node is not None:  # node !!!
+                print("Removing a node with single left child...%d" % node.data)
+                parent = node.parent
+
+                if parent is not None:
+                    if parent.left_node == node:
+                        parent.left_node = node.left_node
+                    if parent.right_node == node:
+                        parent.right_node = node.left_node
+                else:
                     self.root = None
 
                 node.right_node.parent = parent
